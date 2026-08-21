@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-primary tracking-normal;
+  }
+}
+
+.surface-glass {
+  background: rgba(251, 249, 248, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+/* Custom fade-in reveal animations matching Stitch */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide scrollbar for horizontal tab bars */
+.scrollbar-hide,
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile touch improvements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
